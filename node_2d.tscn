@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://crbshgfenhemy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 508.0
+offset_top = 195.0
+offset_right = 629.0
+offset_bottom = 299.0
+text = "test"

@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GodotNetTemplate", "GodotNetTemplate.csproj", "{6DD69BFE-40A8-45FA-AA0E-C667871AFAAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DD69BFE-40A8-45FA-AA0E-C667871AFAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD69BFE-40A8-45FA-AA0E-C667871AFAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD69BFE-40A8-45FA-AA0E-C667871AFAAE}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{6DD69BFE-40A8-45FA-AA0E-C667871AFAAE}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{6DD69BFE-40A8-45FA-AA0E-C667871AFAAE}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{6DD69BFE-40A8-45FA-AA0E-C667871AFAAE}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
