@@ -20,16 +20,15 @@ public partial class Player : CharacterBody2D, IStateMachine<Player.State>
 
     public void TransitionState(State fromState, State toState)
     {
-        throw new NotImplementedException();
     }
 
     public State GetNextState(State currentState, out bool keepCurrent)
     {
-        throw new NotImplementedException();
+        keepCurrent = true;
+        return currentState;
     }
 
     public void TickPhysics(State currentState, double delta)
     {
-        throw new NotImplementedException();
     }
 }
