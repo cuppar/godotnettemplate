@@ -10,20 +10,20 @@
     - Synchronous fade-in/fade-out scene transition to `tscn` file, with game pause during transition
     - Synchronous fade-in/fade-out scene transition to `PackedScene`
     - Synchronous fade-in/fade-out scene transition to `PackedScene`, with game pause during transition
-- Unified Autoload Manager
-    - Supports unified access to Godot registered Autoloads in C#
-    - Supports wrapping Autoloads exposed by GDScript plugins
+- Unified `Autoload` Manager
+    - Supports unified access to Godot registered `Autoloads` in `C#`
+    - Supports wrapping `Autoloads` exposed by `GDScript` plugins
 - Sound Manager
     - BGM player
     - Sound effects player
     - Unified registration for UI sounds
     - Audio Bus management
-        - Default built-in Master/BGM/SFX buses
+        - Default built-in `Master`/`BGM`/`SFX` buses
         - Linear conversion of bus decibels
 - Built-in Common Components
     - Hit box
     - Hurt box
-    - Irregular image button (supports using a single texture to automatically generate mouse hover highlight effect)
+    - Irregular image button (supports using a single texture to automatically generate mouse `hover` highlight effect)
     - Single-layer enum state machine
 - Constants Management
     - Scene file paths
@@ -34,9 +34,9 @@
 
 ## Usage
 
-1. Generate a new project using Godot .Net Editor and create a C# script (this will trigger the automatic creation of the .Net Solution and Project).
+1. Generate a new project using `Godot .Net` Editor and create a `C#` script (this will trigger the automatic creation of the `.Net` `Solution` and `Project`).
 2. Close the Godot Editor to manually modify the `project.godot` content.
 3. Copy all non-`.` prefixed folders from this template, as well as the `.gitignore` and `project.godot` files, to the target project.
 4. Modify the `project.godot` file's `application/config/name` and `dotnet/project/assembly_name` to the new project's name.
-5. Reopen the Godot Editor and test the functionality.
-6. Create a new git repository.
+5. Reopen the `Godot` Editor and test the functionality.
+6. Create a new `git` repository.
