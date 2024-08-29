@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-namespace GodotNetTemplate.classes;
+namespace GodotNetTemplate.Classes;
 
 [GlobalClass]
 public partial class ImageButton : TextureButton

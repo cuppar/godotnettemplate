@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Platform.classes;
+namespace GodotNetTemplate.Classes;
 
 [GlobalClass]
 public partial class HitBox : Area2D
