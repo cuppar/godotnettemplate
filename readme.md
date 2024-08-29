@@ -1,5 +1,5 @@
 ﻿# Godot C# Project Template
-|English|[中文]()|
+| English | [中文](https://github.com/cuppar/godotnettemplate/blob/main/readme.zh.md#godot-c-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF) |
 
 ## Features
 
