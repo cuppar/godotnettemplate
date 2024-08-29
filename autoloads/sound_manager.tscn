@@ -12,11 +12,14 @@ BGMPlayer = NodePath("BGM")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_3hds8")
+bus = &"BGM"
 
 [node name="SFX" type="Node" parent="."]
 
 [node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("3_ucyh0")
+bus = &"SFX"
 
 [node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("4_ro1gc")
+bus = &"SFX"

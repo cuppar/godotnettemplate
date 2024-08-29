@@ -6,7 +6,4 @@
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-    <ItemGroup>
-      <Folder Include="scenes\player\" />
-    </ItemGroup>
 </Project>

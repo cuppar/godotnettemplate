@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneTranslation="*res://addons/scene_translation/scene_translation.tscn"
 SoundManager="*res://autoloads/sound_manager.tscn"
+HUD="*res://ui/hud/hud.tscn"
 
 [dotnet]
 

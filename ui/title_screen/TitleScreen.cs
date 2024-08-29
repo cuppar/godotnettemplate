@@ -1,5 +1,6 @@
 using Godot;
 using GodotNetTemplate.Autoload;
+using GodotNetTemplate.Constants;
 
 namespace GodotNetTemplate.UI;
 
@@ -9,6 +10,8 @@ public partial class TitleScreen : Control
     {
         base._Ready();
         AutoloadManager.SoundManager.SetupUISounds(this);
+        AutoloadManager.SoundManager.PlayBGM(ResourceLoader.Load<AudioStream>(BGMPaths.Master));
+
         StartButton.Pressed += OnStartButtonPressed;
         QuitButton.Pressed += OnQuitButtonPressed;
     }
@@ -20,7 +23,7 @@ public partial class TitleScreen : Control
 
     private void OnStartButtonPressed()
     {
-        GD.Print($"Start Game!");
+        AutoloadManager.SceneTranslation.ChangeSceneToFileAsync(ScenePaths.TestWorld);
     }
 
 

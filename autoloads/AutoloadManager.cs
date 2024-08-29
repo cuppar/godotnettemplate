@@ -1,5 +1,7 @@
 using System;
 using Godot;
+using GodotNetTemplate.UI;
+// ReSharper disable MemberHidesStaticFromOuterClass
 
 namespace GodotNetTemplate.Autoload;
 
@@ -20,7 +22,7 @@ public static class AutoloadManager
 
         #region Nested type: MethodName
 
-        public abstract class MethodName : CanvasLayer.MethodName
+        private abstract class MethodName : CanvasLayer.MethodName
         {
             public static readonly StringName ChangeSceneToFile = "change_scene_to_file";
             public static readonly StringName ChangeSceneToFileAsync = "change_scene_to_file_async";
@@ -34,7 +36,7 @@ public static class AutoloadManager
 
         #region Nested type: PropertyName
 
-        public abstract class PropertyName : CanvasLayer.PropertyName
+        private abstract class PropertyName : CanvasLayer.PropertyName
         {
             public static readonly StringName ThreadLoadSceneFile = "thread_load_scene_file";
         }
@@ -43,7 +45,7 @@ public static class AutoloadManager
 
         #region Nested type: SignalName
 
-        public abstract class SignalName : CanvasLayer.SignalName
+        private abstract class SignalName : CanvasLayer.SignalName
         {
             public static readonly StringName BeforeSceneChanged = "before_scene_changed";
             public static readonly StringName AfterSceneChanged = "after_scene_changed";
@@ -119,4 +121,7 @@ public static class AutoloadManager
 
     public static SoundManager SoundManager { get; } =
         ((SceneTree)Engine.GetMainLoop()).Root.GetNode<SoundManager>("/root/SoundManager");
+    
+    public static HUD HUD { get; } =
+        ((SceneTree)Engine.GetMainLoop()).Root.GetNode<HUD>("/root/HUD");
 }
