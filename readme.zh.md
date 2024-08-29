@@ -1,5 +1,5 @@
-﻿# Godot C# 项目模板
-|[English](https://github.com/cuppar/godotnettemplate?tab=readme-ov-file#godot-c-project-template)|中文|
+﻿# Godot C# 项目模板 
+| [English](https://github.com/cuppar/godotnettemplate?tab=readme-ov-file#godot-c-project-template) | 中文 |
 
 ## 特性
 
