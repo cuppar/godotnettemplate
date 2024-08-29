@@ -25,6 +25,11 @@ SceneTranslation="*res://addons/scene_translation/scene_translation.tscn"
 SoundManager="*res://autoloads/sound_manager.tscn"
 HUD="*res://ui/hud/hud.tscn"
 
+[display]
+
+window/size/always_on_top=true
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="GodotNetTemplate"
