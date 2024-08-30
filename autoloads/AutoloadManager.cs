@@ -3,7 +3,7 @@ using Godot;
 using GodotNetTemplate.UI;
 // ReSharper disable MemberHidesStaticFromOuterClass
 
-namespace GodotNetTemplate.Autoload;
+namespace GodotNetTemplate.Autoloads;
 
 public static class AutoloadManager
 {

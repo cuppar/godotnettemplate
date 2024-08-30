@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using Godot;
-using GodotNetTemplate.Autoload;
+using GodotNetTemplate.Autoloads;
 
 namespace GodotNetTemplate.UI;
 

@@ -1,5 +1,5 @@
 using Godot;
-using GodotNetTemplate.Autoload;
+using GodotNetTemplate.Autoloads;
 using GodotNetTemplate.Constants;
 
 namespace GodotNetTemplate.UI;

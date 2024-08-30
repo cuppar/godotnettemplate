@@ -1,6 +1,6 @@
 using Godot;
 
-namespace GodotNetTemplate.Autoload;
+namespace GodotNetTemplate.Autoloads;
 
 public partial class SoundManager : Node
 {
