@@ -28,6 +28,7 @@
 - Constants Management
     - Scene file paths
     - BGM file paths
+    - Prefab file paths
 - General UI
     - HUD, toggleable display
     - Title screen (default is the main scene)
