@@ -29,6 +29,7 @@
     - Scene file paths
     - BGM file paths
     - Prefab file paths
+    - Group names
 - General UI
     - HUD, toggleable display
     - Title screen (default is the main scene)
