@@ -38,6 +38,11 @@ project/assembly_name="GodotNetTemplate"
 
 enabled=PackedStringArray("res://addons/scene_translation/plugin.cfg")
 
+[gui]
+
+theme/custom="res://assets/vfx/default_theme.tres"
+theme/custom_font="res://assets/fonts/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
