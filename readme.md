@@ -33,7 +33,7 @@
 - General UI
     - HUD, toggleable display
     - Title screen (default is the main scene)
-- Helpers
+- Helpers and Extensions
 
 ## Usage
 

@@ -33,7 +33,7 @@
 - 通用UI
   - HUD，可开关显示与否
   - 主界面(默认为主场景)
-- 常用Helpers
+- 常用Helpers和Extensions
 
 
 ## 使用方式
