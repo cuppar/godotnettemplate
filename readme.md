@@ -1,11 +1,14 @@
 ﻿# Godot C# Project Template
-| English | [中文](https://github.com/cuppar/godotnettemplate/blob/main/readme.zh.md#godot-c-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF) |
+
+|
+English | [中文](https://github.com/cuppar/godotnettemplate/blob/main/readme.zh.md#godot-c-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF) |
 
 ## Features
 
 - Scene Switching Functionality
     - Asynchronous fade-in/fade-out scene transition to `tscn` file, with resource loading progress screen
-    - Asynchronous fade-in/fade-out scene transition to `tscn` file, with resource loading progress screen, and game pause during transition
+    - Asynchronous fade-in/fade-out scene transition to `tscn` file, with resource loading progress screen, and game
+      pause during transition
     - Synchronous fade-in/fade-out scene transition to `tscn` file
     - Synchronous fade-in/fade-out scene transition to `tscn` file, with game pause during transition
     - Synchronous fade-in/fade-out scene transition to `PackedScene`
@@ -25,6 +28,8 @@
     - Hurt box
     - Irregular image button (supports using a single texture to automatically generate mouse `hover` highlight effect)
     - Single-layer enum state machine
+- Built-in Common Prefabs
+    - Camera
 - Constants Management
     - Scene file paths
     - BGM file paths
@@ -37,9 +42,12 @@
 
 ## Usage
 
-1. Generate a new project using `Godot .Net` Editor and create a `C#` script (this will trigger the automatic creation of the `.Net` `Solution` and `Project`).
+1. Generate a new project using `Godot .Net` Editor and create a `C#` script (this will trigger the automatic creation
+   of the `.Net` `Solution` and `Project`).
 2. Close the Godot Editor to manually modify the `project.godot` content.
-3. Copy all non-`.` prefixed folders from this template, as well as the `.gitignore` and `project.godot` files, to the target project.
-4. Modify the `project.godot` file's `application/config/name` and `dotnet/project/assembly_name` to the new project's name.
+3. Copy all non-`.` prefixed folders from this template, as well as the `.gitignore` and `project.godot` files, to the
+   target project.
+4. Modify the `project.godot` file's `application/config/name` and `dotnet/project/assembly_name` to the new project's
+   name.
 5. Reopen the `Godot` Editor and test the functionality.
 6. Create a new `git` repository.

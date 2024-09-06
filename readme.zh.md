@@ -1,40 +1,42 @@
-﻿# Godot C# 项目模板 
+﻿# Godot C# 项目模板
+
 | [English](https://github.com/cuppar/godotnettemplate?tab=readme-ov-file#godot-c-project-template) | 中文 |
 
 ## 特性
 
 - 场景切换功能
-  - 异步淡入淡出切换场景到`tscn`文件，带有加载资源进度界面
-  - 异步淡入淡出切换场景到`tscn`文件，带有加载资源进度界面，切换时暂停游戏
-  - 同步淡入淡出切换场景到`tscn`文件
-  - 同步淡入淡出切换场景到`tscn`文件，切换时暂停游戏
-  - 同步淡入淡出切换场景到`PackedScene`
-  - 同步淡入淡出切换场景到`PackedScene`，切换时暂停游戏
+    - 异步淡入淡出切换场景到`tscn`文件，带有加载资源进度界面
+    - 异步淡入淡出切换场景到`tscn`文件，带有加载资源进度界面，切换时暂停游戏
+    - 同步淡入淡出切换场景到`tscn`文件
+    - 同步淡入淡出切换场景到`tscn`文件，切换时暂停游戏
+    - 同步淡入淡出切换场景到`PackedScene`
+    - 同步淡入淡出切换场景到`PackedScene`，切换时暂停游戏
 - 统一自动加载管理器
-  - 支持在`C#`中统一访问`Godot`中注册的`Autoload`
-  - 支持包装GDScript编写的插件暴露的`Autoload`
+    - 支持在`C#`中统一访问`Godot`中注册的`Autoload`
+    - 支持包装GDScript编写的插件暴露的`Autoload`
 - 声音管理器
-  - BGM播放器
-  - 音效播放器
-  - UI音效统一注册
-  - Audio Bus管理
-    - 默认内置`Master`/`BGM`/`SFX`三条`Bus`
-    - Bus分贝线性化转换
+    - BGM播放器
+    - 音效播放器
+    - UI音效统一注册
+    - Audio Bus管理
+        - 默认内置`Master`/`BGM`/`SFX`三条`Bus`
+        - Bus分贝线性化转换
 - 内置常用组件
-  - 攻击盒
-  - 受伤盒
-  - 不规则图片按钮（支持只用一张纹理图，自动生成鼠标`hover`高亮效果）
-  - 单层枚举状态机
+    - 攻击盒
+    - 受伤盒
+    - 不规则图片按钮（支持只用一张纹理图，自动生成鼠标`hover`高亮效果）
+    - 单层枚举状态机
+- 内置常用预制体
+    - 相机
 - 常量管理
-  - 场景文件路径
-  - BGM文件路径
-  - Prefab文件路径
-  - Groups名称
+    - 场景文件路径
+    - BGM文件路径
+    - Prefab文件路径
+    - Groups名称
 - 通用UI
-  - HUD，可开关显示与否
-  - 主界面(默认为主场景)
+    - HUD，可开关显示与否
+    - 主界面(默认为主场景)
 - 常用Helpers和Extensions
-
 
 ## 使用方式
 
