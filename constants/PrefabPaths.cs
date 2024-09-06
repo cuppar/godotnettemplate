@@ -1,4 +1,4 @@
-namespace AngryBird.Constants;
+namespace GodotNetTemplate.Constants;
 
 public static class PrefabPaths
 {

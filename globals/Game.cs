@@ -1,4 +1,4 @@
-﻿namespace AngryBird.Globals;
+﻿namespace GodotNetTemplate.Globals;
 
 public static class Game
 {
