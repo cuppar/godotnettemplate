@@ -1,5 +1,5 @@
-using GodotNetTemplate.Globals;
 using Godot;
+using GodotNetTemplate.Globals;
 
 namespace GodotNetTemplate;
 

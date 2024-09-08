@@ -5,10 +5,14 @@ namespace GodotNetTemplate;
 
 public partial class Player : CharacterBody2D, IStateMachine<Player.State>
 {
+    #region State enum
+
     public enum State
     {
-        Idle,
+        Idle
     }
+
+    #endregion
 
     private StateMachine<State> _stateMachine;
 
@@ -16,6 +20,8 @@ public partial class Player : CharacterBody2D, IStateMachine<Player.State>
     {
         _stateMachine = StateMachine<State>.Create(this);
     }
+
+    #region IStateMachine<State> Members
 
     public void TransitionState(State fromState, State toState)
     {
@@ -30,4 +36,6 @@ public partial class Player : CharacterBody2D, IStateMachine<Player.State>
     public void TickPhysics(State currentState, double delta)
     {
     }
+
+    #endregion
 }
