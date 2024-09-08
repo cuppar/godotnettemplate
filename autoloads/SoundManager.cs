@@ -1,3 +1,4 @@
+using AngryBird.Constants;
 using Godot;
 
 namespace GodotNetTemplate.Autoloads;
@@ -25,18 +26,23 @@ public partial class SoundManager : Node
 
     public void SetupUISounds(Node node)
     {
-        if (node is Button button)
+        switch (node)
         {
-            button.Pressed += () => PlaySFX("UIPress");
-            button.FocusEntered += () => PlaySFX("UIFocus");
-            button.MouseEntered += button.GrabFocus;
-        }
-
-        if (node is Slider slider)
-        {
-            slider.ValueChanged += _ => PlaySFX("UIPress");
-            slider.FocusEntered += () => PlaySFX("UIFocus");
-            slider.MouseEntered += slider.GrabFocus;
+            case TextureButton textureButton:
+                textureButton.Pressed += () => PlaySFX(SFXNames.UIPress);
+                textureButton.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
+                textureButton.MouseEntered += textureButton.GrabFocus;
+                break;
+            case Button button:
+                button.Pressed += () => PlaySFX(SFXNames.UIPress);
+                button.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
+                button.MouseEntered += button.GrabFocus;
+                break;
+            case Slider slider:
+                slider.ValueChanged += _ => PlaySFX(SFXNames.UIPress);
+                slider.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
+                slider.MouseEntered += slider.GrabFocus;
+                break;
         }
 
         foreach (var child in node.GetChildren())

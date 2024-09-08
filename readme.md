@@ -35,6 +35,8 @@ English | [中文](https://github.com/cuppar/godotnettemplate/blob/main/readme.z
     - BGM file paths
     - Prefab file paths
     - Group names
+    - Meta names
+    - SFX names
 - General UI
     - HUD, toggleable display
     - Title screen (default is the main scene)

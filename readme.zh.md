@@ -33,6 +33,8 @@
     - BGM文件路径
     - Prefab文件路径
     - Groups名称
+    - Meta名称
+    - SFX名称
 - 通用UI
     - HUD，可开关显示与否
     - 主界面(默认为主场景)
