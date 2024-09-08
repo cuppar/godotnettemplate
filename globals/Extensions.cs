@@ -1,8 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Godot;
 using GodotNetTemplate.Constants;
 
-namespace GodotNetTemplate.Globals;
+namespace GodotNetTemplate.Globals.Extensions;
 
 public static class Extensions
 {
@@ -30,5 +31,21 @@ public static class Extensions
             await toolReadyTCS.Task;
         else
             await node.EnsureReadyAsync();
+    }
+}
+
+public static class SignalExtensions
+{
+    public static async Task WhenAll(params SignalAwaiter[] awaiterArray)
+    {
+        var tasks = from awaiter in awaiterArray
+            select awaiter.ToTask();
+
+        await Task.WhenAll(tasks);
+    }
+
+    public static async Task ToTask(this SignalAwaiter awaiter)
+    {
+        await awaiter;
     }
 }
