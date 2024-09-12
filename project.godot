@@ -24,6 +24,7 @@ buses/default_bus_layout="res://assets/sfx/default_bus_layout.tres"
 SceneTranslation="*res://addons/scene_translation/scene_translation.tscn"
 SoundManager="*res://autoloads/sound_manager.tscn"
 HUD="*res://ui/hud/hud.tscn"
+ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 
 [display]
 
@@ -36,7 +37,7 @@ project/assembly_name="GodotNetTemplate"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/scene_translation/plugin.cfg")
+enabled=PackedStringArray("res://addons/imgui-godot/plugin.cfg", "res://addons/scene_translation/plugin.cfg")
 
 [gui]
 
