@@ -1,4 +1,4 @@
-using AngryBird.Constants;
+using GodotNetTemplate.Constants;
 using Godot;
 
 namespace GodotNetTemplate.Autoloads;
