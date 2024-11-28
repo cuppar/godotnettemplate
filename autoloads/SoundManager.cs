@@ -16,8 +16,6 @@ public partial class SoundManager : Node
 
     #endregion
 
-    private float _volume;
-
     public void PlaySFX(string sfxName)
     {
         var player = SFX.GetNode<AudioStreamPlayer>(sfxName);
