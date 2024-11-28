@@ -8,7 +8,7 @@ public partial class StateMachine<TState> : Node
 {
     private TState _currentState;
 
-    public double StateTime;
+    public double StateTime { get; set; }
 
     public TState CurrentState
     {
@@ -16,7 +16,7 @@ public partial class StateMachine<TState> : Node
         private set
         {
             if (Owner is not IStateMachine<TState> owner)
-                throw new OwnerIsNotIStateMachine();
+                throw new OwnerIsNotIStateMachineException();
 
             owner.TransitionState(CurrentState, value);
             _currentState = value;
@@ -35,14 +35,14 @@ public partial class StateMachine<TState> : Node
 
     public override async void _Ready()
     {
-        await ToSignal(Owner, Node.SignalName.Ready);
+        await ToSignal(Owner, SignalName.Ready);
         CurrentState = Enum.GetValues<TState>()[0];
     }
 
     public override void _PhysicsProcess(double delta)
     {
         if (Owner is not IStateMachine<TState> owner)
-            throw new OwnerIsNotIStateMachine();
+            throw new OwnerIsNotIStateMachineException();
 
         while (true)
         {
@@ -58,13 +58,7 @@ public partial class StateMachine<TState> : Node
 
     #region Nested type: OwnerIsNotIStateMachine
 
-    private class OwnerIsNotIStateMachine : Exception
-    {
-        public OwnerIsNotIStateMachine()
-            : base("Owner is not IStateMachine who has a state machine")
-        {
-        }
-    }
+    private class OwnerIsNotIStateMachineException() : Exception("Owner is not IStateMachine who has a state machine");
 
     #endregion
 }
