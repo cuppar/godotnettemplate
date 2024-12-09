@@ -49,7 +49,9 @@ English | [中文](https://github.com/cuppar/godotnettemplate/blob/main/readme.z
 2. Close the Godot Editor to manually modify the `project.godot` content.
 3. Copy all non-`.` prefixed folders from this template, as well as the `.gitignore` and `project.godot` files, to the
    target project.
-4. Modify the `project.godot` file's `application/config/name` and `dotnet/project/assembly_name` to the new project's
-   name.
-5. Reopen the `Godot` Editor and test the functionality.
-6. Create a new `git` repository.
+4. Copy `.csproj` file content, but stay filename don't change, change `C# Version` to 12.
+5. Modify the `project.godot` file's `application/config/name` and `dotnet/project/assembly_name` to the new project's
+   name, the name should match `.Net Project/Solution Name`.
+6. Change the `Namespace` from `GodotNetTemplate` to `<New Project Name>`.
+7. Reopen the `Godot` Editor and test the functionality.
+8. Create a new `git` repository.

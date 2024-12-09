@@ -45,6 +45,8 @@
 1. 使用`Godot .Net`编辑器生成新项目，并创建一个`C#`脚本（触发自动创建`.Net` `Solution`和`Project`）。
 2. 关闭`Godot`编辑器，以方便手动修改`project.godot`内容。
 3. 复制本模板中所有非`.`开头的文件夹，以及`.gitignore`和`project.godot`文件，到目标项目中。
-4. 修改`project.godot`文件中的`application/config/name`和`dotnet/project/assembly_name`为新项目的名称。
-5. 重新打开`Godot`编辑器, 并测试功能。
-6. 新建`git`仓库。
+4. 复制`.csproj`文件内容，但保留文件名不变，修改`C# 语言版本`为12。
+5. 修改`project.godot`文件中的`application/config/name`和`dotnet/project/assembly_name`为新项目的名称，该名称需要与`.Net Project/Solution Name`一致。
+6. 修改`Namespace` 从`GodotNetTemplate`到`新的项目名`。
+7. 重新打开`Godot`编辑器, 并测试功能。 
+8. 新建`git`仓库。
