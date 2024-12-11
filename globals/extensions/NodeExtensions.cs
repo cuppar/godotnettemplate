@@ -1,11 +1,11 @@
-﻿using System.Linq;
+﻿using System;
 using System.Threading.Tasks;
 using Godot;
 using GodotNetTemplate.Constants;
 
 namespace GodotNetTemplate.Globals.Extensions;
 
-public static class Extensions
+public static class NodeExtensions
 {
     /* EnsureReadyAsync Usage Example:
     public partial class Test : Node2D
@@ -105,31 +105,53 @@ public static class Extensions
         else
             await node.EnsureReadyAsync();
     }
-}
 
-public static class SignalExtensions
-{
-    /* SignalExtensions.WhenAll Usage Example:
-    public partial class Test : Node
+    // return the local outline rect of the Node
+    // return null when node has not outline
+    // The method need parent node is `Node2D`
+    public static Rect2? GetOutlineRect(this Node node)
     {
-        async void Method()
+        var globalRect = node.GetOutlineGlobalRect();
+        if (!globalRect.HasValue)
+            return null;
+
+        var (globalPos, globalScale) = node.GetParent() switch
         {
-            var task1 = ToSignal(this, SignalName.Ready);
-            var task2 = ToSignal(this, SignalName.TreeEntered);
-            await SignalExtensions.WhenAll(task1, task2);
-            // do something
-        }
-    }*/
-    public static async Task WhenAll(params SignalAwaiter[] awaiterArray)
-    {
-        var tasks = from awaiter in awaiterArray
-            select awaiter.ToTask();
+            Node2D node2D => (node2D.GlobalPosition, node2D.GlobalScale),
+            _ => throw new InvalidOperationException("This method need the parent node is `Node2D`.")
+        };
 
-        await Task.WhenAll(tasks);
+        return new Rect2((globalRect.Value.Position - globalPos) / globalScale, globalRect.Value.Size / globalScale);
     }
 
-    public static async Task ToTask(this SignalAwaiter awaiter)
+    // return the global outline rect of the Node
+    // return null when node has not outline
+    public static Rect2? GetOutlineGlobalRect(this Node node)
     {
-        await awaiter;
+        Rect2? selfRect = node switch
+        {
+            Control control => control.GetGlobalRect(),
+            Sprite2D sprite => GetSprite2DRect(sprite),
+            _ => null
+        };
+
+        foreach (var child in node.GetChildren())
+        {
+            var childRect = GetOutlineGlobalRect(child);
+            if (!childRect.HasValue) continue;
+
+            selfRect = selfRect?.Merge(childRect.Value) ?? childRect;
+        }
+
+        return selfRect;
+
+        Rect2 GetSprite2DRect(Sprite2D sprite)
+        {
+            var pos = sprite.GlobalPosition;
+            var textureSize = sprite.Texture.GetSize() * sprite.GlobalScale;
+            return sprite.Centered
+                ? new Rect2(pos - textureSize / 2, textureSize)
+                : new Rect2(pos, textureSize);
+        }
     }
 }
