@@ -107,7 +107,7 @@ public static class NodeExtensions
     }
 
     // return the local outline rect of the Node
-    // return null when node has not outline
+    // return null when node has not `outline`
     // The method need parent node is `Node2D`
     public static Rect2? GetOutlineRect(this Node node)
     {
