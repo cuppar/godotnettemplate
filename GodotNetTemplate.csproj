@@ -6,6 +6,7 @@
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>12</LangVersion>
     </PropertyGroup>
     <PropertyGroup>
         <DefineConstants
