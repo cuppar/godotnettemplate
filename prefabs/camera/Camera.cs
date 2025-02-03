@@ -7,17 +7,62 @@ public partial class Camera : Camera2D
 {
     #region 相机边界
 
-    [ExportGroup("Limit")] [Export] public Marker2D LeftLimit = null!;
-    [Export] public Marker2D RightLimit = null!;
-    [Export] public Marker2D TopLimit = null!;
-    [Export] public Marker2D BottomLimit = null!;
-
-    private void _initLimit()
+    [ExportGroup("Limit")]
+    [Export]
+    public Marker2D? LeftLimit
     {
-        LimitLeft = (int)LeftLimit.GlobalPosition.X + 1;
-        LimitRight = (int)RightLimit.GlobalPosition.X - 1;
-        LimitTop = (int)TopLimit.GlobalPosition.Y + 1;
-        LimitBottom = (int)BottomLimit.GlobalPosition.Y - 1;
+        get => _leftLimit;
+        set
+        {
+            _leftLimit = value;
+            _updateLimit();
+        }
+    }
+
+    [Export]
+    public Marker2D? RightLimit
+    {
+        get => _rightLimit;
+        set
+        {
+            _rightLimit = value;
+            _updateLimit();
+        }
+    }
+
+    [Export]
+    public Marker2D? TopLimit
+    {
+        get => _topLimit;
+        set
+        {
+            _topLimit = value;
+            _updateLimit();
+        }
+    }
+
+    [Export]
+    public Marker2D? BottomLimit
+    {
+        get => _bottomLimit;
+        set
+        {
+            _bottomLimit = value;
+            _updateLimit();
+        }
+    }
+
+    private Marker2D? _leftLimit;
+    private Marker2D? _rightLimit;
+    private Marker2D? _bottomLimit;
+    private Marker2D? _topLimit;
+
+    private void _updateLimit()
+    {
+        LimitLeft = (int)(LeftLimit?.GlobalPosition.X + 1 ?? LimitLeft);
+        LimitRight = (int)(RightLimit?.GlobalPosition.X - 1 ?? LimitRight);
+        LimitTop = (int)(TopLimit?.GlobalPosition.Y + 1 ?? LimitTop);
+        LimitBottom = (int)(BottomLimit?.GlobalPosition.Y - 1 ?? LimitBottom);
         ResetSmoothing();
     }
 
@@ -46,7 +91,7 @@ public partial class Camera : Camera2D
     public override void _Ready()
     {
         base._Ready();
-        _initLimit();
+        _updateLimit();
         _initShake();
     }
 
