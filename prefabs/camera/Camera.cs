@@ -30,7 +30,7 @@ public partial class Camera : Camera2D
     }
 
     #endregion
-    
+
     #region 相机边界
 
     [ExportGroup("Limit")]
@@ -99,9 +99,19 @@ public partial class Camera : Camera2D
     [ExportGroup("Shake Screen")] [Export] public float Strength { get; set; }
     [Export] public float RecoverySpeed { get; set; } = 16;
 
+    private void _onShake(float amount)
+    {
+        Strength += amount;
+    }
+
     private void _initShake()
     {
-        Game.ShakeCameraEvent += amount => Strength += amount;
+        Game.ShakeCameraEvent += _onShake;
+    }
+
+    private void _cleanShake()
+    {
+        Game.ShakeCameraEvent -= _onShake;
     }
 
     private void _tickShake(double delta)
@@ -126,7 +136,13 @@ public partial class Camera : Camera2D
         base._Process(delta);
         _tickShake(delta);
     }
-    
+
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+        _cleanShake();
+    }
+
     #region 用户输入
 
     public override void _UnhandledInput(InputEvent @event)
