@@ -28,18 +28,40 @@ public partial class SoundManager : Node
         {
             case TextureButton textureButton:
                 textureButton.Pressed += () => PlaySFX(SFXNames.UIPress);
-                textureButton.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
-                textureButton.MouseEntered += textureButton.GrabFocus;
+                textureButton.FocusEntered += () =>
+                {
+                    if (textureButton.IsDisabled())
+                        return;
+                    PlaySFX(SFXNames.UIFocus);
+                };
+                textureButton.MouseEntered += () =>
+                {
+                    if (!textureButton.IsDisabled())
+                        textureButton.GrabFocus();
+                };
                 break;
             case Button button:
                 button.Pressed += () => PlaySFX(SFXNames.UIPress);
-                button.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
-                button.MouseEntered += button.GrabFocus;
+                button.FocusEntered += () =>
+                {
+                    if (button.IsDisabled())
+                        return;
+                    PlaySFX(SFXNames.UIFocus);
+                };
+                button.MouseEntered += () =>
+                {
+                    if (!button.IsDisabled())
+                        button.GrabFocus();
+                };
                 break;
             case Slider slider:
                 slider.ValueChanged += _ => PlaySFX(SFXNames.UIPress);
                 slider.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
-                slider.MouseEntered += slider.GrabFocus;
+                slider.MouseEntered += () =>
+                {
+                    if (slider.IsEditable())
+                        slider.GrabFocus();
+                };
                 break;
         }
 
