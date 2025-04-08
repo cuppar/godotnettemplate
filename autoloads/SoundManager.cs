@@ -92,10 +92,11 @@ public partial class SoundManager : Node
 
     #region Child
 
-    [ExportGroup("ChildDontChange")] [Export]
-    public Node SFX = null!;
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public Node SFX { get; set; } = null!;
 
-    [Export] public AudioStreamPlayer BGMPlayer = null!;
+    [Export] public AudioStreamPlayer BGMPlayer { get; set; } = null!;
 
     #endregion
 }
