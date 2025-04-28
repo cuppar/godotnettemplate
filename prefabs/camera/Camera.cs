@@ -13,20 +13,32 @@ public partial class Camera : Camera2D
 
     private void _handleZoomOut()
     {
+        // 以鼠标中心缩放
+        // var mousePos = GetGlobalMousePosition();
+        // var toMouse = mousePos - GlobalPosition;
+        // var oldZoom = Zoom;
         Zoom = Zoom with
         {
             X = float.Max(MinZoom.X, Zoom.X - ZoomStep),
             Y = float.Max(MinZoom.Y, Zoom.Y - ZoomStep)
         };
+        // GlobalPosition = mousePos - oldZoom/Zoom * toMouse;
+        ResetSmoothing();
     }
 
     private void _handleZoomIn()
     {
+        // 以鼠标中心缩放
+        // var mousePos = GetGlobalMousePosition();
+        // var toMouse = mousePos - GlobalPosition;
+        // var oldZoom = Zoom;
         Zoom = Zoom with
         {
             X = float.Min(MaxZoom.X, Zoom.X + ZoomStep),
             Y = float.Min(MaxZoom.Y, Zoom.Y + ZoomStep)
         };
+        // GlobalPosition = mousePos - oldZoom/Zoom * toMouse;
+        ResetSmoothing();
     }
 
     #endregion
